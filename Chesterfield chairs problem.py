@@ -14,7 +14,7 @@ chairs = 90
 days = 450
 
 
-@functools.lru_cache(maxsize=days + chairs)
+@functools.lru_cache()
 def prob(chairs_sat_on, day):
     if chairs_sat_on == 0 and day == 0:
         # I know that on the first day no chairs will have been sat on
