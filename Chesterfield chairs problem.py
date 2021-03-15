@@ -1,9 +1,17 @@
+"""
+My friend Tom ate lunch in Chesterfield House common room on about 450 lunchtimes.
+The room has 90 chairs. Each lunch he randomly selects a chair to sit in.
+What is the probably that he has sat in every chair?
+
+Thomas Keeling posed this problem in about 2008. I worked with him on an analytical
+solution but we were unable to find one. I came back to the problem years later
+after learning python. Below is my solution.
+"""
+
 import functools
-import sys
 
 chairs = 90
 days = 450
-sys.setrecursionlimit(3000)
 
 
 @functools.lru_cache(maxsize=days + chairs)
@@ -23,4 +31,5 @@ def prob(chairs_sat_on, day):
     )
 
 
+# prints 0.5479785390056
 print(prob(chairs, days))
